@@ -1,3 +1,12 @@
+" ======================================================= "
+"  ____  _     _        _        _   _       _
+" / ___|| |__ (_)______| | ___  | \ | |_   _(_)_ __ ___
+" \___ \| '_ \| |_  / _` |/ _ \ |  \| \ \ / / | '_ ` _ \
+"  ___) | | | | |/ / (_| |  __/ | |\  |\ V /| | | | | | |
+" |____/|_| |_|_/___\__,_|\___| |_| \_| \_/ |_|_| |_| |_|
+
+" ======================================================= "
+"
 
 " Latin Characters enconding
 set encoding=UTF-8
@@ -17,27 +26,36 @@ set inccommand=split
 
 " PLUGGINS
 call plug#begin()
-Plug 'https://github.com/vim-airline/vim-airline'		" Airline
-Plug 'https://github.com/preservim/nerdtree'			" NERDTree
-Plug 'https://github.com/tpope/vim-surround'			" Surrounding
-Plug 'https://github.com/tpope/vim-commentary'			" Comment with gc & gcc
-Plug 'https://github.com/ap/vim-css-color'				" CSS Color Preview
-Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
-Plug 'https://github.com/ryanoasis/vim-devicons'		" Devicons
-Plug 'https://github.com/tc50cal/vim-terminal'			" Vim Terminal
-Plug 'https://github.com/terryma/vim-multiple-cursors'	" CTRL + N for multiple cursors
-Plug 'https://github.com/preservim/tagbar'				" Tagbar
-Plug 'https://github.com/neoclide/coc.nvim'				" Autocomplete
-Plug 'https://github.com/vim-scripts/vim-webdevicons'	" Vim Devicons
+Plug 'vim-airline/vim-airline'							" Airline
+Plug 'preservim/nerdtree'								" NERDTree
+Plug 'tpope/vim-surround'								" Surrounding
+Plug 'tpope/vim-commentary'								" Comment with gc & gcc
+Plug 'ap/vim-css-color'									" CSS Color Preview
+Plug 'rafi/awesome-vim-colorschemes'					" Retro Schemes
+Plug 'ryanoasis/vim-devicons'							" Devicons
+Plug 'tc50cal/vim-terminal'								" Vim Terminal
+Plug 'terryma/vim-multiple-cursors'						" CTRL + N for multiple cursors
+Plug 'preservim/tagbar'									" Tagbar
+Plug 'neoclide/coc.nvim'								" Autocomplete
+Plug 'vim-scripts/vim-webdevicons'						" Vim Devicons
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" File Fuzzy Finder
+Plug 'junegunn/fzf.vim'									" File Fuzzy Finder
+Plug 'roxma/vim-hug-neovim-rpc'							" Support for Completion Manager
+Plug 'ncm2/ncm2'										" Nvim Completion Manager
+Plug 'roxma/nvim-yarp'									" Remote Plugin Framework
+Plug 'jiangmiao/auto-pairs'								" Auto Pairs
 call plug#end() 
 
 " MAPPING KEYS
 let mapleader="\<space>"
 nmap <F8> :TagbarrToggle<CR>
+nnoremap <leader>; A;<ESC>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>; A;<esc>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-l> :Ag<SPACE>
+nnoremap <C-i> :PlugInstall
 
 
 let g:NERDTreeDirArrowExpandable="+"
